@@ -1,17 +1,39 @@
 import { useState } from "react";
-import { Send, CheckCircle2, Mail, MessageSquare } from "lucide-react";
+import { Send, CheckCircle2, Mail, MessageSquare, LoaderCircle } from "lucide-react";
 import Reveal from "./Reveal.jsx";
+
+const WEB3FORMS_ACCESS_KEY = "2b3f74e3-66eb-4a2a-bb5f-6235693de61e";
 
 const inputClasses =
   "w-full rounded-xl border-0 bg-white px-4 py-3 text-sm text-gray-900 shadow-soft ring-1 ring-inset ring-gray-200 placeholder:text-gray-400 transition-shadow focus:outline-none focus:ring-2 focus:ring-brand-500";
 
 export default function Contact() {
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState("idle"); // idle | sending | sent | error
+  const submitted = status === "sent";
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // TODO: wire this up to a form backend (e.g. Formspree, Resend, or your own API)
-    setSubmitted(true);
+    const form = e.target;
+    setStatus("sending");
+    try {
+      const formData = new FormData(form);
+      formData.append("access_key", WEB3FORMS_ACCESS_KEY);
+      formData.append("subject", "New StaffFlow demo request");
+      formData.append("from_name", "StaffFlow Website");
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+      const data = await res.json();
+      if (data.success) {
+        form.reset();
+        setStatus("sent");
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -72,6 +94,14 @@ export default function Contact() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
+                  {/* Honeypot field for spam bots — hidden from real visitors */}
+                  <input
+                    type="checkbox"
+                    name="botcheck"
+                    tabIndex={-1}
+                    className="hidden"
+                    aria-hidden="true"
+                  />
                   <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                     <div>
                       <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-gray-700">
@@ -128,11 +158,27 @@ export default function Contact() {
                   </div>
                   <button
                     type="submit"
-                    className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand-600 px-6 py-3.5 text-base font-semibold text-white shadow-soft transition-all hover:bg-brand-700 hover:shadow-lift"
+                    disabled={status === "sending"}
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand-600 px-6 py-3.5 text-base font-semibold text-white shadow-soft transition-all hover:bg-brand-700 hover:shadow-lift disabled:cursor-not-allowed disabled:opacity-70"
                   >
-                    <Send className="h-4 w-4" />
-                    Send Message
+                    {status === "sending" ? (
+                      <>
+                        <LoaderCircle className="h-4 w-4 animate-spin" />
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        <Send className="h-4 w-4" />
+                        Send Message
+                      </>
+                    )}
                   </button>
+                  {status === "error" && (
+                    <p className="text-center text-sm font-medium text-red-600">
+                      Something went wrong sending your message. Please try
+                      again in a moment.
+                    </p>
+                  )}
                 </form>
               )}
             </div>

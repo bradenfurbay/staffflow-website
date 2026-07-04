@@ -8,6 +8,7 @@ import About from "./components/About.jsx";
 import FutureFeatures from "./components/FutureFeatures.jsx";
 import Testimonials from "./components/Testimonials.jsx";
 import FAQ from "./components/FAQ.jsx";
+import CTA from "./components/CTA.jsx";
 import Contact from "./components/Contact.jsx";
 import Footer from "./components/Footer.jsx";
 
@@ -25,6 +26,7 @@ export default function App() {
         <FutureFeatures />
         <Testimonials />
         <FAQ />
+        <CTA />
         <Contact />
       </main>
       <Footer />

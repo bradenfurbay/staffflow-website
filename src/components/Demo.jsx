@@ -19,16 +19,23 @@ export default function Demo() {
         </Reveal>
 
         <Reveal delay={150} className="mx-auto mt-12 max-w-4xl">
-          <div className="overflow-hidden rounded-2xl bg-gray-950 shadow-lift ring-1 ring-white/10">
+          <div className="relative">
+            <div
+              aria-hidden="true"
+              className="absolute -inset-8 -z-0 rounded-[2.5rem] bg-[radial-gradient(ellipse_at_center,rgb(59_130_246_/_0.25),transparent_70%)] blur-2xl"
+            />
+            <div className="relative overflow-hidden rounded-2xl bg-gray-950 shadow-lift ring-1 ring-white/15">
             <video
               className="aspect-video w-full"
               src="/staffflow-demo.mp4"
+              poster="/demo-poster.jpg"
               controls
               playsInline
               preload="metadata"
             >
               Your browser does not support embedded videos.
             </video>
+            </div>
           </div>
         </Reveal>
       </div>

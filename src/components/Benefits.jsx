@@ -77,8 +77,8 @@ export default function Benefits() {
             const Icon = benefit.icon;
             return (
               <Reveal key={benefit.title} delay={(i % 4) * 80}>
-                <div className="group h-full rounded-2xl bg-white p-6 shadow-soft ring-1 ring-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
-                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-600 ring-1 ring-inset ring-brand-100 transition-colors group-hover:bg-brand-600 group-hover:text-white">
+                <div className="group h-full rounded-2xl bg-white p-6 shadow-soft ring-1 ring-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_2px_4px_rgb(37_99_235_/_0.06),0_16px_40px_rgb(37_99_235_/_0.12)] hover:ring-brand-200">
+                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 text-white shadow-[0_2px_8px_rgb(37_99_235_/_0.35)] transition-transform duration-300 group-hover:scale-110">
                     <Icon className="h-5 w-5" strokeWidth={2} />
                   </span>
                   <h3 className="mt-4 text-base font-semibold text-gray-900">

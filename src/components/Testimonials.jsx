@@ -39,7 +39,7 @@ export default function Testimonials() {
         <div className="mt-14 grid grid-cols-1 gap-6 lg:grid-cols-3">
           {testimonials.map((testimonial, i) => (
             <Reveal key={i} delay={i * 100}>
-              <figure className="relative flex h-full flex-col rounded-2xl bg-white p-8 shadow-soft ring-1 ring-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
+              <figure className="relative flex h-full flex-col rounded-2xl bg-white p-8 shadow-soft ring-1 ring-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_2px_4px_rgb(37_99_235_/_0.06),0_16px_40px_rgb(37_99_235_/_0.12)] hover:ring-brand-200">
                 <span className="absolute right-5 top-5 rounded-full bg-amber-50 px-2.5 py-0.5 text-[11px] font-semibold text-amber-700 ring-1 ring-inset ring-amber-200">
                   Sample
                 </span>

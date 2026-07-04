@@ -25,7 +25,12 @@ const tabs = [
 
 function BrowserFrame({ children, url }) {
   return (
-    <div className="overflow-hidden rounded-2xl bg-white shadow-lift ring-1 ring-gray-200">
+    <div className="relative isolate">
+      <div
+        aria-hidden="true"
+        className="absolute -inset-6 -z-10 rounded-[2rem] bg-[radial-gradient(ellipse_at_center,rgb(37_99_235_/_0.14),transparent_70%)] blur-xl"
+      />
+      <div className="overflow-hidden rounded-2xl bg-white shadow-lift ring-1 ring-gray-200">
       <div className="flex items-center gap-2 border-b border-gray-100 bg-gray-50 px-4 py-3">
         <div className="flex gap-1.5">
           <span className="h-3 w-3 rounded-full bg-red-400" />
@@ -37,7 +42,8 @@ function BrowserFrame({ children, url }) {
         </div>
         <div className="w-12" />
       </div>
-      <div className="h-[380px] overflow-hidden sm:h-[420px]">{children}</div>
+        <div className="h-[380px] overflow-hidden sm:h-[420px]">{children}</div>
+      </div>
     </div>
   );
 }

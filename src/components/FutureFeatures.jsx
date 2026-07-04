@@ -63,7 +63,7 @@ export default function FutureFeatures() {
             const Icon = feature.icon;
             return (
               <Reveal key={feature.title} delay={(i % 3) * 100}>
-                <div className="group relative h-full overflow-hidden rounded-2xl bg-white p-6 shadow-soft ring-1 ring-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
+                <div className="group relative h-full overflow-hidden rounded-2xl bg-white p-6 shadow-soft ring-1 ring-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_2px_4px_rgb(37_99_235_/_0.06),0_16px_40px_rgb(37_99_235_/_0.12)] hover:ring-brand-200">
                   <span className="absolute right-4 top-4 rounded-full bg-gray-100 px-2.5 py-0.5 text-[11px] font-semibold text-gray-500">
                     Coming soon
                   </span>

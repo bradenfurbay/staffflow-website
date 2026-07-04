@@ -9,19 +9,25 @@ const highlights = [
 
 export default function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden pt-32 pb-20 sm:pt-40 sm:pb-28">
+    <section id="top" className="relative isolate overflow-hidden pt-32 pb-12 sm:pt-40 sm:pb-16">
       {/* Background decoration */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 -z-10"
       >
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,#f8fafc,white)]" />
-        <div className="absolute left-1/2 top-0 h-[600px] w-[900px] -translate-x-1/2 rounded-full bg-brand-50 opacity-70 blur-3xl" />
+        {/* Aurora orbs */}
+        <div className="animate-float absolute top-0 left-1/2 h-[550px] w-[850px] -translate-x-[70%] rounded-full bg-[radial-gradient(ellipse_at_center,rgb(37_99_235_/_0.35),transparent_60%)] blur-2xl" />
         <div
-          className="absolute inset-0 opacity-[0.35]"
+          className="animate-float absolute top-10 left-1/2 h-[500px] w-[750px] -translate-x-[20%] rounded-full bg-[radial-gradient(ellipse_at_center,rgb(56_189_248_/_0.3),transparent_60%)] blur-2xl"
+          style={{ animationDelay: "-3s" }}
+        />
+        <div className="absolute top-52 left-1/2 h-[400px] w-[600px] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgb(99_102_241_/_0.22),transparent_60%)] blur-2xl" />
+        <div
+          className="absolute inset-0 opacity-[0.4]"
           style={{
             backgroundImage:
-              "linear-gradient(to right, #e5e7eb 1px, transparent 1px), linear-gradient(to bottom, #e5e7eb 1px, transparent 1px)",
+              "linear-gradient(to right, #e2e8f0 1px, transparent 1px), linear-gradient(to bottom, #e2e8f0 1px, transparent 1px)",
             backgroundSize: "56px 56px",
             maskImage:
               "radial-gradient(ellipse 70% 55% at 50% 0%, black 30%, transparent 75%)",
@@ -64,14 +70,14 @@ export default function Hero() {
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <a
                 href="#demo"
-                className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand-600 px-7 py-3.5 text-base font-semibold text-white shadow-lift transition-all hover:bg-brand-700 hover:shadow-[0_4px_8px_rgb(37_99_235_/_0.2),0_20px_48px_rgb(37_99_235_/_0.35)] sm:w-auto"
+                className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-b from-brand-500 to-brand-600 px-7 py-3.5 text-base font-semibold text-white shadow-[inset_0_1px_0_rgb(255_255_255_/_0.2),0_2px_4px_rgb(37_99_235_/_0.2),0_12px_32px_rgb(37_99_235_/_0.35)] ring-1 ring-brand-700/50 transition-all hover:-translate-y-0.5 hover:shadow-[inset_0_1px_0_rgb(255_255_255_/_0.2),0_4px_8px_rgb(37_99_235_/_0.25),0_20px_48px_rgb(37_99_235_/_0.45)] sm:w-auto"
               >
                 <Play className="h-4 w-4 fill-current" />
                 Watch Demo
               </a>
               <a
                 href="#contact"
-                className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-white px-7 py-3.5 text-base font-semibold text-gray-900 shadow-soft ring-1 ring-gray-200 transition-all hover:bg-gray-50 hover:shadow-lift sm:w-auto"
+                className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-white px-7 py-3.5 text-base font-semibold text-gray-900 shadow-soft ring-1 ring-gray-200 transition-all hover:-translate-y-0.5 hover:bg-gray-50 hover:shadow-lift sm:w-auto"
               >
                 Contact Me
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />

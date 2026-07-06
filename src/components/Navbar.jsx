@@ -24,16 +24,16 @@ export default function Navbar() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "border-b border-gray-100 bg-white/80 shadow-[0_1px_12px_rgb(16_24_40_/_0.04)] backdrop-blur-xl"
+          ? "border-b border-gray-200/60 bg-white/70 backdrop-blur-2xl dark:border-white/10 dark:bg-black/70"
           : "bg-transparent"
       }`}
     >
-      <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:px-8">
+      <nav className="mx-auto flex h-14 max-w-7xl items-center justify-between px-6 lg:px-8">
         <a href="#top" className="flex items-center gap-2">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-brand-500 to-brand-700 text-white shadow-soft">
-            <UtensilsCrossed className="h-4.5 w-4.5" strokeWidth={2.25} />
+          <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-brand-500 to-brand-700 text-white">
+            <UtensilsCrossed className="h-4 w-4" strokeWidth={2.25} />
           </span>
-          <span className="text-lg font-bold tracking-tight text-gray-900">
+          <span className="text-base font-semibold tracking-tight text-gray-900 dark:text-white">
             StaffFlow
           </span>
         </a>
@@ -43,7 +43,7 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-gray-600 transition-colors hover:text-gray-900"
+              className="text-sm font-medium text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
             >
               {link.label}
             </a>
@@ -53,7 +53,7 @@ export default function Navbar() {
         <div className="hidden items-center gap-3 md:flex">
           <a
             href="#contact"
-            className="rounded-lg bg-brand-600 px-4 py-2 text-sm font-semibold text-white shadow-soft transition-all hover:bg-brand-700 hover:shadow-lift"
+            className="rounded-full bg-brand-600 px-5 py-1.5 text-sm font-medium text-white transition-all hover:bg-brand-500"
           >
             Contact Me
           </a>
@@ -62,7 +62,7 @@ export default function Navbar() {
         <button
           type="button"
           onClick={() => setOpen(!open)}
-          className="rounded-lg p-2 text-gray-600 transition-colors hover:bg-gray-100 md:hidden"
+          className="rounded-lg p-2 text-gray-600 transition-colors hover:bg-gray-100 md:hidden dark:text-gray-300 dark:hover:bg-white/10"
           aria-label="Toggle menu"
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -70,14 +70,14 @@ export default function Navbar() {
       </nav>
 
       {open && (
-        <div className="border-t border-gray-100 bg-white px-6 py-4 shadow-lift md:hidden">
+        <div className="border-t border-gray-200/60 bg-white/95 px-6 py-4 backdrop-blur-2xl md:hidden dark:border-white/10 dark:bg-black/95">
           <div className="flex flex-col gap-1">
             {links.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="rounded-lg px-3 py-2.5 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:text-gray-900"
+                className="rounded-lg px-3 py-2.5 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-white/10 dark:hover:text-white"
               >
                 {link.label}
               </a>
@@ -85,7 +85,7 @@ export default function Navbar() {
             <a
               href="#contact"
               onClick={() => setOpen(false)}
-              className="mt-2 rounded-lg bg-brand-600 px-3 py-2.5 text-center text-sm font-semibold text-white shadow-soft transition-colors hover:bg-brand-700"
+              className="mt-2 rounded-full bg-brand-600 px-3 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-brand-500"
             >
               Contact Me
             </a>

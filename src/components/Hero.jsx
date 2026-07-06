@@ -9,60 +9,45 @@ const highlights = [
 
 export default function Hero() {
   return (
-    <section id="top" className="relative isolate overflow-hidden pt-32 pb-12 sm:pt-40 sm:pb-16">
-      {/* Background decoration */}
+    <section
+      id="top"
+      className="relative isolate overflow-hidden pt-36 pb-16 sm:pt-48 sm:pb-24"
+    >
+      {/* Background wash */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 -z-10"
       >
-        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,#f8fafc,white)]" />
-        {/* Aurora orbs */}
-        <div className="animate-float absolute top-0 left-1/2 h-[550px] w-[850px] -translate-x-[70%] rounded-full bg-[radial-gradient(ellipse_at_center,rgb(37_99_235_/_0.35),transparent_60%)] blur-2xl" />
+        <div className="animate-float absolute top-0 left-1/2 h-[550px] w-[850px] -translate-x-[70%] rounded-full bg-[radial-gradient(ellipse_at_center,rgb(37_99_235_/_0.14),transparent_60%)] blur-2xl dark:bg-[radial-gradient(ellipse_at_center,rgb(37_99_235_/_0.22),transparent_60%)]" />
         <div
-          className="animate-float absolute top-10 left-1/2 h-[500px] w-[750px] -translate-x-[20%] rounded-full bg-[radial-gradient(ellipse_at_center,rgb(56_189_248_/_0.3),transparent_60%)] blur-2xl"
+          className="animate-float absolute top-10 left-1/2 h-[500px] w-[750px] -translate-x-[20%] rounded-full bg-[radial-gradient(ellipse_at_center,rgb(56_189_248_/_0.12),transparent_60%)] blur-2xl dark:bg-[radial-gradient(ellipse_at_center,rgb(56_189_248_/_0.16),transparent_60%)]"
           style={{ animationDelay: "-3s" }}
-        />
-        <div className="absolute top-52 left-1/2 h-[400px] w-[600px] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgb(99_102_241_/_0.22),transparent_60%)] blur-2xl" />
-        <div
-          className="absolute inset-0 opacity-[0.4]"
-          style={{
-            backgroundImage:
-              "linear-gradient(to right, #e2e8f0 1px, transparent 1px), linear-gradient(to bottom, #e2e8f0 1px, transparent 1px)",
-            backgroundSize: "56px 56px",
-            maskImage:
-              "radial-gradient(ellipse 70% 55% at 50% 0%, black 30%, transparent 75%)",
-            WebkitMaskImage:
-              "radial-gradient(ellipse 70% 55% at 50% 0%, black 30%, transparent 75%)",
-          }}
         />
       </div>
 
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl text-center">
+        <div className="mx-auto max-w-4xl text-center">
           <Reveal>
-            <span className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-1.5 text-sm font-medium text-gray-700 shadow-soft ring-1 ring-gray-200">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-500 opacity-60" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-brand-600" />
-              </span>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-600 dark:text-brand-400">
               Purpose-built for restaurant teams
-            </span>
+            </p>
           </Reveal>
 
           <Reveal delay={100}>
-            <h1 className="mt-8 text-4xl font-extrabold tracking-tight text-gray-900 sm:text-6xl sm:leading-[1.08]">
-              Employee Onboarding{" "}
-              <span className="bg-gradient-to-r from-brand-600 to-brand-500 bg-clip-text text-transparent">
-                Made Simple
-              </span>{" "}
-              for Restaurants
+            <h1 className="mt-6 text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl sm:leading-[1.05] dark:text-white">
+              Employee Onboarding.
+              <br />
+              <span className="bg-gradient-to-r from-brand-600 via-brand-500 to-sky-400 bg-clip-text text-transparent">
+                Made Simple.
+              </span>
             </h1>
           </Reveal>
 
           <Reveal delay={200}>
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-600 sm:text-xl">
+            <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-gray-600 sm:text-xl dark:text-gray-400">
               Digital onboarding, employee training, quizzes, AI assistance,
-              compliance tracking, and manager dashboards—all in one platform.
+              compliance tracking, and manager dashboards—all in one platform
+              built for restaurants.
             </p>
           </Reveal>
 
@@ -70,14 +55,14 @@ export default function Hero() {
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <a
                 href="#demo"
-                className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-b from-brand-500 to-brand-600 px-7 py-3.5 text-base font-semibold text-white shadow-[inset_0_1px_0_rgb(255_255_255_/_0.2),0_2px_4px_rgb(37_99_235_/_0.2),0_12px_32px_rgb(37_99_235_/_0.35)] ring-1 ring-brand-700/50 transition-all hover:-translate-y-0.5 hover:shadow-[inset_0_1px_0_rgb(255_255_255_/_0.2),0_4px_8px_rgb(37_99_235_/_0.25),0_20px_48px_rgb(37_99_235_/_0.45)] sm:w-auto"
+                className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-600 px-8 py-3.5 text-base font-medium text-white transition-all hover:-translate-y-0.5 hover:bg-brand-500 hover:shadow-[0_8px_32px_rgb(37_99_235_/_0.4)] sm:w-auto"
               >
                 <Play className="h-4 w-4 fill-current" />
                 Watch Demo
               </a>
               <a
                 href="#contact"
-                className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-white px-7 py-3.5 text-base font-semibold text-gray-900 shadow-soft ring-1 ring-gray-200 transition-all hover:-translate-y-0.5 hover:bg-gray-50 hover:shadow-lift sm:w-auto"
+                className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-gray-100 px-8 py-3.5 text-base font-medium text-gray-900 transition-all hover:-translate-y-0.5 hover:bg-gray-200 sm:w-auto dark:bg-white/10 dark:text-white dark:hover:bg-white/15"
               >
                 Contact Me
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
@@ -86,13 +71,13 @@ export default function Hero() {
           </Reveal>
 
           <Reveal delay={400}>
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
+            <div className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
               {highlights.map((item) => (
                 <span
                   key={item}
-                  className="inline-flex items-center gap-2 text-sm font-medium text-gray-600"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-gray-500 dark:text-gray-400"
                 >
-                  <CheckCircle2 className="h-4 w-4 text-brand-600" />
+                  <CheckCircle2 className="h-4 w-4 text-brand-600 dark:text-brand-400" />
                   {item}
                 </span>
               ))}

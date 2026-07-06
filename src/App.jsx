@@ -11,11 +11,13 @@ import FAQ from "./components/FAQ.jsx";
 import CTA from "./components/CTA.jsx";
 import Contact from "./components/Contact.jsx";
 import Footer from "./components/Footer.jsx";
+import ThemeToggle from "./components/ThemeToggle.jsx";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-white text-gray-900">
+    <div className="min-h-screen bg-white text-gray-900 transition-colors duration-300 dark:bg-black dark:text-gray-100">
       <Navbar />
+      <ThemeToggle />
       <main>
         <Hero />
         <ProductPreview />

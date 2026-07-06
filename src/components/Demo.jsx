@@ -3,13 +3,13 @@ import SectionHeading from "./SectionHeading.jsx";
 
 export default function Demo() {
   return (
-    <section id="demo" className="bg-gray-900 py-20 sm:py-28">
+    <section id="demo" className="bg-[#0a0a0c] py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <Reveal className="mx-auto max-w-2xl text-center">
-          <span className="inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand-200 ring-1 ring-inset ring-white/15">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-400">
             Demo
-          </span>
-          <h2 className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          </p>
+          <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-5xl">
             See StaffFlow in action
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-gray-400">

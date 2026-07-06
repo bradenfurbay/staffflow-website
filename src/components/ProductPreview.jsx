@@ -30,14 +30,14 @@ function BrowserFrame({ children, url }) {
         aria-hidden="true"
         className="absolute -inset-6 -z-10 rounded-[2rem] bg-[radial-gradient(ellipse_at_center,rgb(37_99_235_/_0.14),transparent_70%)] blur-xl"
       />
-      <div className="overflow-hidden rounded-2xl bg-white shadow-lift ring-1 ring-gray-200">
-      <div className="flex items-center gap-2 border-b border-gray-100 bg-gray-50 px-4 py-3">
+      <div className="overflow-hidden rounded-3xl bg-white shadow-lift ring-1 ring-gray-200 dark:ring-white/15">
+      <div className="flex items-center gap-2 border-b border-gray-100 bg-gray-50 px-4 py-3 dark:border-white/10 dark:bg-[#1c1c1e]">
         <div className="flex gap-1.5">
           <span className="h-3 w-3 rounded-full bg-red-400" />
           <span className="h-3 w-3 rounded-full bg-amber-400" />
           <span className="h-3 w-3 rounded-full bg-green-400" />
         </div>
-        <div className="mx-auto flex h-6 w-full max-w-xs items-center justify-center rounded-md bg-white px-3 text-[11px] font-medium text-gray-400 ring-1 ring-gray-200">
+        <div className="mx-auto flex h-6 w-full max-w-xs items-center justify-center rounded-md bg-white px-3 text-[11px] font-medium text-gray-400 ring-1 ring-gray-200 dark:bg-black/40 dark:text-gray-500 dark:ring-white/10">
           {url}
         </div>
         <div className="w-12" />
@@ -348,8 +348,8 @@ export default function ProductPreview() {
                   onClick={() => setActive(tab.id)}
                   className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition-all ${
                     isActive
-                      ? "bg-gray-900 text-white shadow-soft"
-                      : "bg-white text-gray-600 ring-1 ring-gray-200 hover:bg-gray-50 hover:text-gray-900"
+                      ? "bg-gray-900 text-white shadow-soft dark:bg-white dark:text-gray-900"
+                      : "bg-white text-gray-600 ring-1 ring-gray-200 hover:bg-gray-50 hover:text-gray-900 dark:bg-white/5 dark:text-gray-400 dark:ring-white/10 dark:hover:bg-white/10 dark:hover:text-white"
                   }`}
                 >
                   <Icon className="h-4 w-4" />

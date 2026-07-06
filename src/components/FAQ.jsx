@@ -43,18 +43,18 @@ const faqs = [
 
 function FaqItem({ faq, isOpen, onToggle }) {
   return (
-    <div className="rounded-2xl bg-white shadow-soft ring-1 ring-gray-100 transition-shadow hover:shadow-lift">
+    <div className="rounded-2xl bg-white shadow-soft ring-1 ring-gray-100 transition-shadow hover:shadow-lift dark:bg-[#1c1c1e] dark:ring-white/10">
       <button
         type="button"
         onClick={onToggle}
         aria-expanded={isOpen}
         className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
       >
-        <span className="text-base font-semibold text-gray-900">
+        <span className="text-base font-semibold text-gray-900 dark:text-white">
           {faq.question}
         </span>
         <ChevronDown
-          className={`h-5 w-5 shrink-0 text-gray-400 transition-transform duration-300 ${
+          className={`h-5 w-5 shrink-0 text-gray-400 transition-transform duration-300 dark:text-gray-500 ${
             isOpen ? "rotate-180" : ""
           }`}
         />
@@ -65,7 +65,7 @@ function FaqItem({ faq, isOpen, onToggle }) {
         }`}
       >
         <div className="overflow-hidden">
-          <p className="px-6 pb-5 text-[15px] leading-relaxed text-gray-600">
+          <p className="px-6 pb-5 text-[15px] leading-relaxed text-gray-600 dark:text-gray-400">
             {faq.answer}
           </p>
         </div>
@@ -78,7 +78,7 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section id="faq" className="bg-gray-50/70 py-20 sm:py-28">
+    <section id="faq" className="bg-[#f5f5f7] py-20 transition-colors sm:py-28 dark:bg-[#101012]">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <SectionHeading
           eyebrow="FAQ"

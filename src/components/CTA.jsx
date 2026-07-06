@@ -6,7 +6,7 @@ export default function CTA() {
     <section className="py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <Reveal>
-          <div className="relative overflow-hidden rounded-3xl bg-gray-900 px-6 py-16 shadow-lift sm:px-16 sm:py-20">
+          <div className="relative overflow-hidden rounded-3xl bg-[#0a0a0c] px-6 py-16 shadow-lift ring-1 ring-transparent sm:px-16 sm:py-20 dark:ring-white/10">
             {/* Background glow */}
             <div
               aria-hidden="true"
@@ -31,7 +31,7 @@ export default function CTA() {
             />
 
             <div className="relative mx-auto max-w-2xl text-center">
-              <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+              <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-5xl">
                 Ready to simplify onboarding at your restaurant?
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-gray-300">
@@ -41,14 +41,14 @@ export default function CTA() {
               <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
                 <a
                   href="#contact"
-                  className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-white px-7 py-3.5 text-base font-semibold text-gray-900 shadow-lift transition-all hover:-translate-y-0.5 hover:bg-gray-100 sm:w-auto"
+                  className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-white px-8 py-3.5 text-base font-medium text-gray-900 shadow-lift transition-all hover:-translate-y-0.5 hover:bg-gray-100 sm:w-auto"
                 >
                   Request a Demo
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                 </a>
                 <a
                   href="#demo"
-                  className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-white/10 px-7 py-3.5 text-base font-semibold text-white ring-1 ring-white/25 backdrop-blur transition-all hover:-translate-y-0.5 hover:bg-white/15 sm:w-auto"
+                  className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-white/10 px-8 py-3.5 text-base font-medium text-white ring-1 ring-white/25 backdrop-blur transition-all hover:-translate-y-0.5 hover:bg-white/15 sm:w-auto"
                 >
                   <Play className="h-4 w-4 fill-current" />
                   Watch the Video

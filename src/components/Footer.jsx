@@ -16,7 +16,7 @@ const companyLinks = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-gray-100 bg-gray-50/70">
+    <footer className="border-t border-gray-100 bg-[#f5f5f7] transition-colors dark:border-white/10 dark:bg-[#101012]">
       <div className="mx-auto max-w-7xl px-6 py-14 lg:px-8">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-2">
@@ -24,24 +24,24 @@ export default function Footer() {
               <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-brand-500 to-brand-700 text-white shadow-soft">
                 <UtensilsCrossed className="h-4.5 w-4.5" strokeWidth={2.25} />
               </span>
-              <span className="text-lg font-bold tracking-tight text-gray-900">
+              <span className="text-lg font-bold tracking-tight text-gray-900 dark:text-white">
                 StaffFlow
               </span>
             </a>
-            <p className="mt-4 max-w-sm text-sm leading-relaxed text-gray-600">
+            <p className="mt-4 max-w-sm text-sm leading-relaxed text-gray-600 dark:text-gray-400">
               Digital onboarding, training, quizzes, AI assistance, and manager
               dashboards—built specifically for restaurant teams.
             </p>
           </div>
 
           <div>
-            <p className="text-sm font-semibold text-gray-900">Product</p>
+            <p className="text-sm font-semibold text-gray-900 dark:text-white">Product</p>
             <ul className="mt-4 space-y-3">
               {productLinks.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-sm text-gray-600 transition-colors hover:text-brand-600"
+                    className="text-sm text-gray-600 transition-colors hover:text-brand-600 dark:text-gray-400 dark:hover:text-brand-400"
                   >
                     {link.label}
                   </a>
@@ -51,13 +51,13 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className="text-sm font-semibold text-gray-900">Company</p>
+            <p className="text-sm font-semibold text-gray-900 dark:text-white">Company</p>
             <ul className="mt-4 space-y-3">
               {companyLinks.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-sm text-gray-600 transition-colors hover:text-brand-600"
+                    className="text-sm text-gray-600 transition-colors hover:text-brand-600 dark:text-gray-400 dark:hover:text-brand-400"
                   >
                     {link.label}
                   </a>
@@ -67,11 +67,11 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-gray-200 pt-8 sm:flex-row">
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-gray-200 pt-8 sm:flex-row dark:border-white/10">
           <p className="text-sm text-gray-500">
             © {new Date().getFullYear()} StaffFlow. All rights reserved.
           </p>
-          <p className="text-sm text-gray-400">
+          <p className="text-sm text-gray-400 dark:text-gray-500">
             Employee onboarding made simple for restaurants.
           </p>
         </div>

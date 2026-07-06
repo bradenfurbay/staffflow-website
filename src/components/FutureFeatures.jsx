@@ -50,7 +50,7 @@ const features = [
 
 export default function FutureFeatures() {
   return (
-    <section id="roadmap" className="bg-gray-50/70 py-20 sm:py-28">
+    <section id="roadmap" className="bg-[#f5f5f7] py-20 transition-colors sm:py-28 dark:bg-[#101012]">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <SectionHeading
           eyebrow="Roadmap"
@@ -63,17 +63,17 @@ export default function FutureFeatures() {
             const Icon = feature.icon;
             return (
               <Reveal key={feature.title} delay={(i % 3) * 100}>
-                <div className="group relative h-full overflow-hidden rounded-2xl bg-white p-6 shadow-soft ring-1 ring-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_2px_4px_rgb(37_99_235_/_0.06),0_16px_40px_rgb(37_99_235_/_0.12)] hover:ring-brand-200">
-                  <span className="absolute right-4 top-4 rounded-full bg-gray-100 px-2.5 py-0.5 text-[11px] font-semibold text-gray-500">
+                <div className="group relative h-full overflow-hidden rounded-3xl bg-white p-6 shadow-soft ring-1 ring-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_2px_4px_rgb(37_99_235_/_0.06),0_16px_40px_rgb(37_99_235_/_0.12)] hover:ring-brand-200 dark:bg-[#1c1c1e] dark:ring-white/10 dark:hover:ring-brand-500/40">
+                  <span className="absolute right-4 top-4 rounded-full bg-gray-100 px-2.5 py-0.5 text-[11px] font-semibold text-gray-500 dark:bg-white/10 dark:text-gray-400">
                     Coming soon
                   </span>
-                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-gray-900 text-white transition-colors group-hover:bg-brand-600">
+                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-gray-900 text-white transition-colors group-hover:bg-brand-600 dark:bg-white dark:text-gray-900 dark:group-hover:bg-brand-500 dark:group-hover:text-white">
                     <Icon className="h-5 w-5" strokeWidth={2} />
                   </span>
-                  <h3 className="mt-4 text-base font-semibold text-gray-900">
+                  <h3 className="mt-4 text-base font-semibold text-gray-900 dark:text-white">
                     {feature.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-gray-600">
+                  <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
                     {feature.description}
                   </p>
                 </div>
